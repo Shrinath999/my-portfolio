@@ -1,0 +1,567 @@
+.experience-section {
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+/* Section Heading */
+
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  margin-bottom: 70px;
+}
+
+.section-number {
+  color: var(--accent);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding-top: 8px;
+}
+
+.section-label {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+/* Timeline */
+
+.timeline {
+  position: relative;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+/* Timeline Vertical Line */
+
+.timeline::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  left: 18px;
+
+  width: 1px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(56, 189, 248, 0.4) 5%,
+    rgba(56, 189, 248, 0.25) 95%,
+    transparent
+  );
+}
+
+/* Timeline Item */
+
+.timeline-item {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 38px 1fr;
+
+  gap: 28px;
+
+  margin-bottom: 45px;
+}
+
+/* Timeline Marker */
+
+.timeline-marker {
+  position: relative;
+
+  width: 38px;
+  min-height: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-marker span {
+  position: relative;
+
+  width: 13px;
+  height: 13px;
+
+  margin-top: 32px;
+
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+
+  background: var(--bg-secondary);
+
+  box-shadow:
+    0 0 0 5px rgba(56, 189, 248, 0.06),
+    0 0 20px rgba(56, 189, 248, 0.3);
+
+  z-index: 2;
+
+  animation: markerPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes markerPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 5px rgba(56, 189, 248, 0.06),
+      0 0 20px rgba(56, 189, 248, 0.3);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 9px rgba(56, 189, 248, 0.03),
+      0 0 30px rgba(56, 189, 248, 0.5);
+  }
+}
+
+/* Current Role Marker */
+
+.timeline-item:first-child .timeline-marker span {
+  background: var(--accent);
+}
+
+/* Experience Card */
+
+.experience-card {
+  position: relative;
+
+  padding: 30px;
+
+  border: 1px solid var(--border);
+  border-radius: 14px;
+
+  background: var(--bg-card);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* Card Glow */
+
+.experience-card::before {
+  content: '';
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  top: -120px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  opacity: 0.025;
+
+  filter: blur(55px);
+
+  transition: 0.5s ease;
+}
+
+.experience-card:hover::before {
+  opacity: 0.12;
+  transform: scale(1.4);
+}
+
+.experience-card:hover {
+  transform: translateX(8px);
+
+  border-color: rgba(56, 189, 248, 0.3);
+
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.3),
+    0 0 35px rgba(56, 189, 248, 0.06);
+}
+
+/* Current Role */
+
+.current-role {
+  border-color: rgba(56, 189, 248, 0.25);
+
+  box-shadow:
+    0 0 35px rgba(56, 189, 248, 0.04);
+}
+
+/* Experience Header */
+
+.experience-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 18px;
+}
+
+.experience-period {
+  color: var(--accent);
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+  margin-bottom: 7px;
+}
+
+.experience-header h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+
+  margin-bottom: 5px;
+}
+
+.experience-header h4 {
+  color: var(--text-secondary);
+
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.experience-location {
+  flex-shrink: 0;
+
+  padding: 6px 10px;
+
+  border: 1px solid var(--border);
+  border-radius: 5px;
+
+  color: var(--text-muted);
+
+  font-size: 0.65rem;
+}
+
+/* Current Badge */
+
+.current-badge {
+  display: inline-flex;
+
+  margin-bottom: 18px;
+
+  padding: 5px 10px;
+
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 20px;
+
+  background: rgba(34, 197, 94, 0.07);
+
+  color: #4ade80;
+
+  font-size: 0.65rem;
+  font-weight: 600;
+}
+
+/* Project Name */
+
+.project-name {
+  color: var(--text-primary);
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  margin-bottom: 10px;
+}
+
+/* Description */
+
+.experience-description {
+  max-width: 850px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.85rem;
+
+  line-height: 1.8;
+
+  margin-bottom: 20px;
+}
+
+/* Responsibilities */
+
+.responsibility-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+
+  padding: 0;
+
+  margin: 0 0 25px;
+
+  list-style: none;
+}
+
+.responsibility-list li {
+  position: relative;
+
+  padding-left: 20px;
+
+  color: var(--text-muted);
+
+  font-size: 0.78rem;
+
+  line-height: 1.7;
+}
+
+.responsibility-list li::before {
+  content: '▹';
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  color: var(--accent);
+
+  font-size: 0.85rem;
+}
+
+.responsibility-list li:hover {
+  color: var(--text-secondary);
+}
+
+/* Technology Tags */
+
+.experience-tech {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.experience-tech span {
+  padding: 6px 10px;
+
+  border: 1px solid var(--border);
+  border-radius: 5px;
+
+  background: rgba(5, 8, 22, 0.5);
+
+  color: var(--text-muted);
+
+  font-size: 0.65rem;
+  font-weight: 500;
+
+  transition: 0.3s ease;
+}
+
+.experience-tech span:hover {
+  color: var(--accent);
+
+  border-color: rgba(56, 189, 248, 0.35);
+
+  background: rgba(56, 189, 248, 0.05);
+
+  transform: translateY(-2px);
+}
+
+/* Staggered Timeline Animation */
+
+.timeline-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.timeline-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Career Summary */
+
+.career-summary {
+  max-width: 1050px;
+
+  display: grid;
+  grid-template-columns: 3px 1fr;
+
+  gap: 22px;
+
+  margin: 65px auto 0;
+}
+
+.summary-line {
+  border-radius: 10px;
+
+  background: linear-gradient(
+    to bottom,
+    var(--accent),
+    var(--accent-secondary)
+  );
+}
+
+.summary-label {
+  display: block;
+
+  color: var(--accent);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 10px;
+}
+
+.career-summary p {
+  max-width: 800px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.88rem;
+
+  line-height: 1.8;
+}
+
+.career-summary strong {
+  color: var(--text-primary);
+}
+
+/* Tablet */
+
+@media (max-width: 800px) {
+
+  .section-heading {
+    margin-bottom: 50px;
+  }
+
+  .experience-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .experience-location {
+    align-self: flex-start;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  .section-heading {
+    gap: 12px;
+  }
+
+  .section-heading h2 {
+    font-size: 2rem;
+  }
+
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 22px 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .timeline-marker {
+    width: 22px;
+  }
+
+  .timeline-marker span {
+    width: 10px;
+    height: 10px;
+    margin-top: 25px;
+  }
+
+  .experience-card {
+    padding: 20px;
+  }
+
+  .experience-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .experience-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .experience-description {
+    font-size: 0.8rem;
+  }
+
+  .responsibility-list li {
+    font-size: 0.74rem;
+  }
+
+  .career-summary {
+    gap: 15px;
+    margin-top: 45px;
+  }
+}
+
+.project-block {
+  margin-top: 25px;
+  padding: 20px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: rgba(5, 8, 22, 0.35);
+
+  transition: 0.3s ease;
+}
+
+.project-block:hover {
+  border-color: rgba(56, 189, 248, 0.25);
+  transform: translateX(5px);
+}
+
+.project-label {
+  color: var(--accent);
+
+  font-size: 0.62rem;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 7px;
+}
+
+.project-block h5 {
+  color: var(--text-primary);
+
+  font-family: 'Space Grotesk', sans-serif;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  margin-bottom: 15px;
+}
+
+.project-block .responsibility-list {
+  margin-bottom: 0;
+}

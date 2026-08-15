@@ -1,0 +1,44 @@
+<nav class="navbar">
+  <div class="container nav-container">
+
+    <a href="#home" class="logo">
+      <span>&lt;</span>
+      Shrinath
+      <span>/&gt;</span>
+    </a>
+
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li><a href="#home" (click)="closeMenu()">Home</a></li>
+      <li><a href="#about" (click)="closeMenu()">About</a></li>
+      <li><a href="#skills" (click)="closeMenu()">Skills</a></li>
+      <li><a href="#experience" (click)="closeMenu()">Experience</a></li>
+      <li><a href="#projects" (click)="closeMenu()">Projects</a></li>
+      <li><a href="#certifications" (click)="closeMenu()">Certifications</a></li>
+      <li><a href="#contact" (click)="closeMenu()">Contact</a></li>
+
+      <li>
+      <a
+  href="/resume.pdf"
+  download="Shrinath-Deshpande-Resume.pdf"
+  class="resume-btn">
+  Resume
+</a>
+
+      </li>
+    </ul>
+
+    <button
+      class="menu-btn"
+      type="button"
+      (click)="toggleMenu()"
+      [class.active]="isMenuOpen"
+      aria-label="Toggle navigation menu">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+  </div>
+</nav>
